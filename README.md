@@ -26,8 +26,6 @@ First you'll need to install the prerequisites: [Python](https://www.python.org/
 
 Then do a `git clone XXX` or just download the thing.
 
-
-
 ## Things That Are Fun To Play With
 
 TBD
@@ -48,7 +46,7 @@ TBD
 - XXX Units on all variables out of GridLAB-D.
 - XXX Bill in dollars.
 - XXX Try a second climate? Gave some more TMY2 options. You could also grab a new [TMY3 file](https://rredc.nrel.gov/solar/old_data/nsrdb/1991-2005/tmy3/by_state_and_city.html).
-- OOO Clean up subplots.
+- XXX Clean up subplots.
 - OOO What about scheduling and using the battery?
 
 ## Todo ISO Level

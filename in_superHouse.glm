@@ -1,5 +1,5 @@
 clock {
-	//timezone CST6;
+	timezone EST5;
 	starttime '2012-01-01 00:00:00';
 	stoptime '2013-01-01 00:00:00';
 };
@@ -27,7 +27,7 @@ module residential;
 object climate {
 	name Climate;
 	interpolate QUADRATIC;
-	tmyfile in_climate_vt_burlington.tmy2;
+	tmyfile in_climate_vt_burlington.tmy3.csv;
 };
 
 object triplex_meter {
@@ -50,14 +50,14 @@ object house {
 	hvac_breaker_rating 1000;
 	cooling_system_type ELECTRIC;
 	total_thermal_mass_per_floor_area 3.504;
-	cooling_setpoint 70;
+	cooling_setpoint 72;
 	air_temperature 71.22;
 	ceiling_height 8;
 	Rdoors 10.51;
 	heating_system_type HEAT_PUMP;
 	glazing_layers 3;
 	glazing_treatment 2;
-	heating_setpoint 65;
+	heating_setpoint 68;
 	groupid Residential;
 	schedule_skew -57.2977315002;
 	window_frame 4;
@@ -108,12 +108,14 @@ object waterheater {
 	tank_volume 50;
 	name waterHeater_house0;
 	parent house0;
+	height ;
 	heating_element_capacity 4.5 kW;
 	thermostat_deadband 7.8;
 	location INSIDE;
+	tank_diameter 2.5 ft;
 	demand large_6*0.99;
 	tank_setpoint 130;
-	tank_UA 3.7;
+	tank_UA 1.3;
 	temperature 130;
 };
 
@@ -180,6 +182,8 @@ object inverter {
 object battery {
 	battery_state FULL;
 	name battery_house0;
+	V_Max 260;
+	I_Max 15;
 	parent batteryInverter_house0;
 	round_trip_efficiency 0.85;
 	generator_status ONLINE;
