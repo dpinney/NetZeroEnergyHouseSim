@@ -6,7 +6,7 @@ Eventually I'll try to aggregate a bunch of these together to look at regional a
 
 Here's what the output looks like:
 
-[]()
+![screenshot](./out_all_charts.png)
 
 ## What's Part of the Simulation?
 
