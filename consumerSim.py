@@ -27,7 +27,7 @@ for fname in fileNames:
 
 # Plot the demands and generations
 plt.switch_backend('MacOSX')
-plt.figure(figsize=(24,15))
+plt.figure(figsize=(16,10))
 plt.subplots_adjust(left=0.07, right=0.97, bottom=0.10, top=0.95, wspace=0.12, hspace=0.12)
 plt.subplot(2, 1, 1)
 formatter = mdates.DateFormatter('%H-%m-%S')
