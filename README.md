@@ -1,10 +1,10 @@
 ## Net Zero Energy House Simulator
 
-This simulates a house with added, solar and energy storage that (to my surprise) make it net zero energy. It's also got an electric vehicle. By default it uses weather data from Vermont.
+Simulate a house with added solar and energy storage. It's also got an electric vehicle. By default it uses weather data from Vermont.
 
-Eventually I'll try to aggregate a bunch of these together to look at regional and national building energy. But that's a lot harder than just whipping up a little python and gridlabd stuff.
+Eventually I'll try to aggregate a bunch of these together to look at regional and national building energy. But that's a lot harder than just whipping up a little python and gridlabd.
 
-Here's what the output looks like:
+Here's what the output looks like, a summary of consumption, generation, temperatures, and total cost:
 
 ![screenshot](./out_all_charts.png)
 
@@ -24,15 +24,26 @@ meter --- house --- | --- responsive loads (washing machine, dryer, dishwasher, 
 
 First you'll need to install the prerequisites: [Python](https://www.python.org/downloads/), [gridlabd](https://sourceforge.net/projects/gridlab-d/), and matplotlib (`pip install matplotlib`).
 
-Then do a `git clone XXX` or just download the thing.
+Then do a `git clone https://github.com/dpinney/NetZeroEnergyHouseSim.git` or just [download the thing](https://github.com/dpinney/NetZeroEnergyHouseSim/archive/master.zip).
+
+The main outputs are in [out_all_charts.png](./out_all_charts.png), and they're regenerated when you run `python consumerSim.py`. The .csv outputs are also regenerated and are all named "out_....csv".
 
 ## Things That Are Fun To Play With
 
-TBD
+Edit in_superHouse.glm and change:
+
+1. The timespan of the simulation by editing the clock object starting on line 1.
+2. The climate, defined on line 30, can be switched to other the cities using files in_climates....csv or any [TMY3 file](https://rredc.nrel.gov/solar/old_data/nsrdb/1991-2005/tmy3/by_state_and_city.html).
+3. Insulation, square footage, heating system type, etc. for the house starting on line 47.
+4. Specs on the solar system starting on line 151.
+5. The energy storage system, which I confess I haven't really put on a schedule for charging/discharging, starting on line 182.
+6. Probably other things. Gridlabd includes a full distribution system simulator, so you can build a neighborhood of houses. Or play with wind generation. Or gas. Or thermal storage.
+
+In general, the gridlabd objects are tricky, but you can get most of the available options from the documentation for the [residential module](http://gridlab-d.shoutwiki.com/wiki/Residential_(module)) and the [generators module](http://gridlab-d.shoutwiki.com/wiki/Generators_(module)).
 
 ## Aggregation
 - Consumer Level (done)
-- Neighborhood, distribution, transmission operator (kinda boring)
+- Neighborhood, distribution, transmission operator (kinda boring, renewables will have about the same output)
 - ISO (interesting)
 
 ## Todo Consumer Level
