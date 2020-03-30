@@ -1,7 +1,7 @@
 clock {
 	timezone EST5;
 	starttime '2012-01-01 00:00:00';
-	stoptime '2013-01-01 00:00:00';
+	stoptime '2012-01-03 00:00:00';
 };
 
 #include "in_superSchedules.glm";
@@ -51,7 +51,6 @@ object house {
 	cooling_system_type ELECTRIC;
 	total_thermal_mass_per_floor_area 3.504;
 	cooling_setpoint 72;
-	air_temperature 71.22;
 	ceiling_height 8;
 	Rdoors 10.51;
 	heating_system_type HEAT_PUMP;
@@ -63,7 +62,8 @@ object house {
 	window_frame 4;
 	parent super_meter;
 	floor_area 2000.0;
-	number_of_stories 1;
+	number_of_stories 2;
+	air_temperature 71.22;
 	mass_temperature 71.22;
 	name house0;
 	Rfloor 35.59;
@@ -238,7 +238,7 @@ object battery {
 
 object recorder {
 	interval 60;
-	property heating_demand[kW],cooling_demand[kW],heating_setpoint[degF],air_temperature[degF],outdoor_temperature[degF];
+	property hvac_load[kW],heating_demand[kW],cooling_demand[kW],heating_setpoint[degF],air_temperature[degF],outdoor_temperature[degF];
 	line_units NONE;
 	file out_house.csv;
 	parent house0;
